@@ -18,9 +18,6 @@ function multiply(x, y){
 
 // Divide two numbers 
 function divide(x, y){
-    if(y === 0){
-        return "555 A7a"
-    }
     return x/y ;
 }
 
@@ -43,6 +40,14 @@ function operate(operator , num1 , num2){
 // display the input on the screen
 function displayInput(){
 
+    if (screen.textContent === "a7a" || screen.textContent === "a7" || screen.textContent === "a"){
+        if (!(this.textContent === "+" || this.textContent === "-" ||
+        this.textContent === "x" || this.textContent === "÷")){
+            screen.textContent = "";
+        }else {
+            return;
+        }
+    }
     // If its a new operation after a finished one
     if (newOperation === true){
         // if the user input was NOT + or - or x or ÷
@@ -143,7 +148,11 @@ function doOperation(){
                 // the operator 
                 operator = screen.textContent.slice(index, index+1);
                 // make the operation and display it on the screen
-                screen.textContent = Math.round(operate(operator, num1 , num2)*10)/10;
+                if (num2 === "0" && operator === "÷"){
+                    screen.textContent = "a7a";
+                    return;
+                }
+                screen.textContent = Math.round(operate(operator, num1 , num2)*100)/100;
                 // activate the new operation variable
                 newOperation = true ;
             }
