@@ -21,18 +21,6 @@ body {
 }
 
 
-
-/* just the dummy */
-/* .dummy {
-    text-align: center;
-    opacity: 0.2;
-    position: absolute;
-    left: 610px;
-    top: 25px;
-}
-.dummy-image {
-    width: 375px;
-} */
 .calculator {
     box-sizing: border-box;
     width: 372px;
@@ -48,6 +36,9 @@ body {
     margin-top: 95px;
     margin-bottom: 50px;
     color: white;
+    max-width: 352px;
+    max-height: 248px;
+    overflow-x: scroll;
 }
 .buttons {
     width: 352px;
@@ -63,7 +54,11 @@ body {
     align-items: center;
     border-radius: 50%;
     font-size: 35px;
+    
+}
+.button:hover {
     cursor: pointer;
+    opacity: 0.9;
 }
 .custom-dimension {
     width: 169px;
