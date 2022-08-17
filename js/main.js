@@ -106,20 +106,27 @@ function displayInput(){
     // clear the screen
     screen.textContent += this.textContent ;
 }
+
+// Clear the screen when user press AC button
 function clearScreen(){
     screen.textContent = "0";
     zeroClicked = false ;
 }
 function doOperation(){
 
+    // make sure there is an operator on the screen
     if (screen.textContent.indexOf('+') > -1 || screen.textContent.indexOf('-') > -1 || screen.textContent.indexOf('x') > -1 || screen.textContent.indexOf('÷') > -1){
+            // if the screen has an operator but it is the last char
             if (screen.textContent.charAt(screen.textContent.length -1) === "+" ||
                 screen.textContent.charAt(screen.textContent.length -1) === "-" ||
                 screen.textContent.charAt(screen.textContent.length -1) === "x" ||
                 screen.textContent.charAt(screen.textContent.length -1) === "÷"){
+                    // do not do anything
                     return;
             }else {
+                // the index number for the operator
                 let index;
+                // save the index number of the operator in index
                 if (screen.textContent.indexOf('+') > -1){
                     index = screen.textContent.indexOf('+');
                 }else if (screen.textContent.indexOf('-') > -1){
@@ -129,23 +136,34 @@ function doOperation(){
                 }else {
                     index = screen.textContent.indexOf('÷');
                 }
-
+                // number one will be everything before the operator
                 num1 = screen.textContent.slice(0, index);
+                // the second number will be everything after the operator
                 num2 = screen.textContent.slice(index+1);
+                // the operator 
                 operator = screen.textContent.slice(index, index+1);
+                // make the operation and display it on the screen
                 screen.textContent = Math.round(operate(operator, num1 , num2)*10)/10;
+                // activate the new operation variable
                 newOperation = true ;
             }
+    // if there is no operator do not do anything
     }else {
         return;
     }
     
 }
+
+
+// when the user presses the C button delete a single number
 function deleteNumber(){
+    // if the screen has more than one number
     if (screen.textContent.length > 1){
+        // remove the last number
         screen.textContent = screen.textContent.slice(0, -1);
         newOperation = false ;
     } else {
+        // if it has one number just make it zero
         screen.textContent = "0";
     }
     
