@@ -68,7 +68,7 @@ function displayInput(){
         // if the zero was not clicked by the user
         if (zeroClicked === false){
             // and user input was an operator
-            if (this.textContent === "+" || this.textContent === "-" || this.textContent === "x" || this.textContent === "÷") {
+            if (this.textContent === "+" || this.textContent === "x" || this.textContent === "÷") {
                 // do not do anything
                 return;
             }
@@ -99,7 +99,13 @@ function displayInput(){
             screen.textContent.charAt(screen.textContent.length -1) === "x" ||
             screen.textContent.charAt(screen.textContent.length -1) === "÷"){
                 // do not do anything
-                return;
+                if (this.textContent !== "-"){
+                    return;
+                }
+                if (this.textContent === "-" && screen.textContent.charAt(screen.textContent.length -1) === "-"){
+                    return;
+                }
+                
             }else {
                 // call the function that operates if there is an operation
                 doOperation();
