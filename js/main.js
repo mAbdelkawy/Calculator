@@ -134,12 +134,17 @@ function doOperation(){
                 // save the index number of the operator in index
                 if (screen.textContent.indexOf('+') > -1){
                     index = screen.textContent.indexOf('+');
-                }else if (screen.textContent.indexOf('-') > -1){
-                    index = screen.textContent.indexOf('-');
+                }else if (screen.textContent.indexOf('÷') > -1){
+                    index = screen.textContent.indexOf('÷');
                 }else if (screen.textContent.indexOf('x') > -1){
                     index = screen.textContent.indexOf('x');
                 }else {
-                    index = screen.textContent.indexOf('÷');
+                    if (screen.textContent.split('-').length <= 2){
+                        index = screen.textContent.indexOf('-');
+                    }else{
+                        index = screen.textContent.indexOf('-', 1);
+                    }
+                    
                 }
                 // number one will be everything before the operator
                 num1 = screen.textContent.slice(0, index);
