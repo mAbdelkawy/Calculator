@@ -40,7 +40,7 @@ function operate(operator , num1 , num2){
 // display the input on the screen
 function displayInput(){
 
-    if (screen.textContent === "a7a" || screen.textContent === "a7" || screen.textContent === "a" || screen.textContent.indexOf('N') > -1){
+    if (screen.textContent === "a7a" || screen.textContent === "a7" || screen.textContent === "a" || screen.textContent.indexOf('N') > -1 || screen.textContent.indexOf('I') > -1){
         if (!(this.textContent === "+" || this.textContent === "-" ||
         this.textContent === "x" || this.textContent === "÷")){
             screen.textContent = "";
