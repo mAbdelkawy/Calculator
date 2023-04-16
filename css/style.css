@@ -1,75 +1,70 @@
 /* main styles */
 * {
-    margin: 0;
-    padding: 0;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-    font-family: sans-serif;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: sans-serif;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 .grey {
-    background-color: #a8a8a8;
-    color: black;
+  background-color: #a8a8a8;
+  color: black;
 }
 .orange {
-    background-color: #fb9623;
-    color: white;
+  background-color: #fb9623;
+  color: white;
 }
 .dark-grey {
-    background-color: #333333;
-    color: white;
+  background-color: #333333;
+  color: white;
 }
 .prevent-select {
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-  }
-
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
 
 .calculator {
-    box-sizing: border-box;
-    padding: 16px;
-    width: 100vw;
-    height: 100vh;
-    max-width: 52.1739vh;
-    max-height: 191.7vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  padding: 16px;
+  width: min(100vw, 56.25vh);
+  height: min(100vh, 177vw);
+  background-color: black;
 }
 .screen {
-    font-size: 7rem;
-    padding-top:11.94%;
-    padding-bottom: 11.94%;
-    color: white;
-    overflow-x: auto;
+  padding-top: 11.94%;
+  padding-bottom: 11.94%;
+  height: 30%;
+  overflow-x:auto;
+  color: white;
+  font-size: 7rem;
 }
-.row {
-    display: flex;
-    gap: 4%;
-    margin-bottom: 4%;
+.buttons {
+  height: 70%;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
-.button{
-    width: 21.9%;
-    aspect-ratio: 1 / 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 2.5rem;
-    
+.button {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-size: 2.5rem;
 }
 .button:hover {
-    cursor: pointer;
-    opacity: 0.9;
+  cursor: pointer;
+  opacity: 0.9;
 }
 .custom-dimension {
-    width: 47.8%;
-    aspect-ratio: 184.7 / 78;
-    border-radius: 500px;
+  grid-column-end: span 2;
+  aspect-ratio: auto;
+  border-radius: 500px;
 }
