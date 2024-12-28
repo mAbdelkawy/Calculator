@@ -10,7 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 .grey {
   background-color: #a8a8a8;
@@ -40,7 +41,10 @@ body {
   padding-top: 11.94%;
   padding-bottom: 11.94%;
   height: 30%;
-  overflow-x:auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   color: white;
   font-size: 7rem;
 }
